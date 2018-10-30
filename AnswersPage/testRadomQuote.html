@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Quote</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).unbind("click").bind("click",function(){
+            var text=["<b>Hello world</b>","<b>Hello jQuery</b>","<b>Hello Javascript</b>"];
+            var pic = ["https://images.pexels.com/photos/954202/pexels-photo-954202.jpeg?auto=compress&cs=tinysrgb&h=350",
+            "https://images.pexels.com/photos/967097/pexels-photo-967097.jpeg?auto=compress&cs=tinysrgb&h=350",
+            "https://images.pexels.com/photos/861137/pexels-photo-861137.jpeg?auto=compress&cs=tinysrgb&h=350"];
+            var i = Math.floor(Math.random()*10)%3;
+            $("#button1").on("click",function () {
+                $(".Quote").html(text[i]);
+                $(".pic").html("<img class=\"imgtar img-fluid\"\n" +
+                    "                     src=\""+pic[i]+"\"\n" +
+                    "                     alt=\"background\">");
+            });
+        });
+    </script>
+
+    <style>
+        .mainbody {
+            position: relative;
+            display: block;
+            height: auto;
+            /*border: solid;*/
+            margin-top: 8%;
+        }
+
+        .imgtar {
+            border-radius: 30px;
+            width: 100%;
+            height: auto;
+        }
+
+        .Quote {
+            position: absolute;
+            left: 40%;
+            top: 75%;
+            float: right;
+            font-family: "Comic Sans MS", Garamond;
+            text-decoration: blink;
+            font-size: 20px;
+            font-style: oblique;
+        }
+        #button2{
+            margin-left: 55%;
+        }
+
+        #button1,#button2{
+            /*display: inline-block;*/
+            /*margin-left: 50%;*/
+            width: 20%;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="mainbody col-md-6 offset-md-3">
+        <div class="picQuote">
+            <div class="pic">
+                <img class="imgtar img-fluid"
+                     src="https://images.pexels.com/photos/954202/pexels-photo-954202.jpeg?auto=compress&cs=tinysrgb&h=350"
+                     alt="background">
+            </div>
+            <div class="Quote">
+                <b>"This area display quote"</b>
+            </div>
+        </div>
+        <div class="button">
+            <br>
+            <a class="button btn-outline-info btn-lg" type="button"  id="button2"target="_blank" href="https://twitter.com/intent/tweet?">Twitter
+            </a>
+            <button class="btn-outline-primary btn-lg" id="button1" type="button">New</button>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>
